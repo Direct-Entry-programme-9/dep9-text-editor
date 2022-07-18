@@ -6,9 +6,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="394.0" prefWidth="394.0" style="-fx-background-color: rgba(0,0,0,0);" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SplashFormController">
+<AnchorPane prefHeight="372.0" prefWidth="547.0" style="-fx-background-color: rgba(0,0,0,0);" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SplashFormController">
    <children>
-      <AnchorPane layoutX="20.0" layoutY="229.0" prefHeight="145.0" prefWidth="357.0" style="-fx-background-color: red;">
+      <AnchorPane layoutX="45.0" layoutY="178.0" prefHeight="145.0" prefWidth="488.0" style="-fx-background-color: red;">
          <children>
             <Label layoutX="113.0" layoutY="14.0" text="Loading text editor" textFill="WHITE">
                <font>
@@ -28,7 +28,7 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <ImageView fitHeight="198.0" fitWidth="259.0" layoutX="68.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="145.0" fitWidth="216.0" layoutX="160.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../image/b99e31bc71d0b14e7c6a8bdfadc1ccfe.gif" />
          </image>
