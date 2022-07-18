@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="394.0" prefWidth="394.0" style="-fx-background-color: rgba(0,0,0,0);" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SplashFormController">
+   <children>
+      <AnchorPane layoutX="20.0" layoutY="229.0" prefHeight="145.0" prefWidth="357.0" style="-fx-background-color: red;">
+         <children>
+            <Label layoutX="113.0" layoutY="14.0" text="Loading text editor" textFill="WHITE">
+               <font>
+                  <Font name="Cantarell Extra Bold" size="25.0" />
+               </font>
+            </Label>
+            <Label layoutX="206.0" layoutY="57.0" text="v1.0.0" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblStatus" layoutX="23.0" layoutY="113.0" prefHeight="18.0" prefWidth="320.0" text="Loading.." textFill="WHITE" />
+            <ImageView fitHeight="116.0" fitWidth="85.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/text%20editor%20icon.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="198.0" fitWidth="259.0" layoutX="68.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/b99e31bc71d0b14e7c6a8bdfadc1ccfe.gif" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
