@@ -4,6 +4,8 @@ import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
+import javafx.print.Printer;
+import javafx.print.PrinterJob;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -63,8 +65,11 @@ public class TextEditorFormController {
                     fileChooser.setInitialDirectory(new File(System.getProperty("user.home")));
                     fileChooser.setTitle("Open the text doc");
                     fileChooser.getExtensionFilters()
-                            .add(new FileChooser.ExtensionFilter("Text document (*.txt)","*.txt"));
+                            .add(new FileChooser.ExtensionFilter("Text document (*.txt)","*.txt",
+                                    "Text editor document (*.dep9)", "*.dep9"));
                     File file = fileChooser.showOpenDialog(txtEditor.getScene().getWindow());
+
+                    if (file == null) return;
 
                     FileInputStream fis = new FileInputStream(file);
                     for (int i = 0; i < file.length(); i++) {
@@ -91,7 +96,8 @@ public class TextEditorFormController {
                     directoryChooser.setInitialDirectory(new File(System.getProperty("user.home")));
                     directoryChooser.setTitle("Select a location to save your file");
                     File filePath = directoryChooser.showDialog(txtEditor.getScene().getWindow());
-                    File destFile = new File(filePath, "Untitled.txt");
+                    if (filePath == null) return;
+                    File destFile = new File(filePath, "Untitled.dep9");
 
                     if (! destFile.exists()) {
                         destFile.createNewFile();
@@ -124,7 +130,24 @@ public class TextEditorFormController {
         mnuPrint.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
+                if (Printer.getDefaultPrinter() == null){
+                    new Alert(Alert.AlertType.ERROR, "Couldn't find the printer, Please check and try again.").showAndWait();
+                    return;
+                }
 
+                PrinterJob printerJob = PrinterJob.createPrinterJob();
+                if (printerJob != null){
+                    printerJob.showPrintDialog(txtEditor.getScene().getWindow());
+                    boolean isSuccess = printerJob.printPage(txtEditor);
+                    if (isSuccess){
+                        printerJob.endJob();
+                    } else {
+                        new Alert(Alert.AlertType.ERROR, "Fail to print, try again").showAndWait();
+                    }
+                } else {
+                    new Alert(Alert.AlertType.ERROR, "Fail to initialize new printer job, Please try again").showAndWait();
+
+                }
             }
         });
 
