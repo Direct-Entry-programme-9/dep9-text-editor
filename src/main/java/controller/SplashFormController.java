@@ -18,25 +18,25 @@ public class SplashFormController {
 
     public void initialize(){
         Timeline timeline = new Timeline();
-        var keyFrame1=new KeyFrame(Duration.millis(500), new EventHandler<ActionEvent>() {
+        var keyFrame1=new KeyFrame(Duration.millis(250), new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
                 lblStatus.setText("Initializing..");
             }
         });
-        var keyFrame2=new KeyFrame(Duration.millis(1000), new EventHandler<ActionEvent>() {
+        var keyFrame2=new KeyFrame(Duration.millis(500), new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
                 lblStatus.setText("Loading pluging..");
             }
         });
-        var keyFrame3=new KeyFrame(Duration.millis(1500), new EventHandler<ActionEvent>() {
+        var keyFrame3=new KeyFrame(Duration.millis(750), new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
                 lblStatus.setText("Loading UI..");
             }
         });
-        var keyFrame4=new KeyFrame(Duration.millis(1600), new EventHandler<ActionEvent>() {
+        var keyFrame4=new KeyFrame(Duration.millis(1000), new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
                 Parent container= null;
